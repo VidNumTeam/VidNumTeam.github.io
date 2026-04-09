@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VidNum-1.4K is a comprehensive benchmark for Video-based Numerical Reasoning with hierarchical Level 1/2/3 evaluation.">
+  <meta name="keywords" content="VidNum-1.4K, benchmark, video counting, video Numerical Reasoning, VLM evaluation">
+  <title>VidNum-1.4K Benchmark | Video-based Numerical Reasoning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>`r`n<header class="top-nav-wrap">
+    <nav class="top-nav container is-max-widescreen" aria-label="Main navigation">
+      <a class="top-nav-brand" href="main.html">VidNum-1.4K</a>
+      <div class="top-nav-links">
+        <a href="#about-vidnum">About</a>
+        <a href="#demo-questions">See Demo Questions</a>
+        <a href="#manual-pipeline">Pipeline</a>
+        <a href="use-dataset.html">Use Our Dataset</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="https://github.com/VidNumTeam/VidNum.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section nav-offset">
+      <div class="container is-max-widescreen demo-wide">
+        <div class="hero-panel">
+          <div class="hero-topline">
+            <span class="eyebrow-pill">Benchmark Project Page</span>
+            <span class="eyebrow-copy">A Hierarchical Video Counting and Numerical Reasoning Benchmark</span>
+          </div>
+
+          <div class="hero-center">
+            <p class="hero-kicker">Video-based Numerical Reasoning Benchmark</p>
+            <h1 class="title publication-title">
+              <span class="publication-name">VidNum-1.4K</span>
+              <span class="publication-subtitle">A Comprehensive Benchmark for Video-based Numerical Reasoning</span>
+            </h1>
+
+            <p class="hero-summary">
+              VidNum-1.4K is a strictly human-annotated benchmark with 1,379 video-question pairs across diverse real-world, documentary, and virtual-world videos.
+              It evaluates progressive capability from direct counting to compositional numerical reasoning through Level 1, Level 2, and Level 3 tasks.
+            </p>
+
+            <div class="author-shell" aria-label="Author information">
+              <div class="author-row">
+                <a class="author-chip author-chip-lead" href="https://spidermonk7.github.io" target="_blank" rel="noopener noreferrer">Shaoyang Cui*</a>
+                <span class="author-chip">Lingbei Meng*</span>
+              </div>
+              <p class="author-affiliation">Tsinghua University | Shenzhen Loop Area Institute</p>
+              <p class="author-note">* Both authors contributed equally to this research.</p>
+            </div>
+
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="sample-sigconf-authordraft (1).pdf" class="button cta-button cta-primary" target="_blank" rel="noopener noreferrer">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Read Paper (PDF)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/VidNumTeam/VidNum.git" class="button cta-button cta-secondary" target="_blank" rel="noopener noreferrer">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>GitHub</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="static/downloads/VidNum1_4K.jsonl" class="button cta-button cta-accent" download>
+                  <span class="icon"><i class="fas fa-download"></i></span>
+                  <span>Download Benchmark JSONL</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="leaderboard.html" class="button cta-button cta-secondary">
+                  <span class="icon"><i class="fas fa-trophy"></i></span>
+                  <span>Open Leaderboard</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about-vidnum">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="section-label">About</p>
+          <h2 class="title is-3">About the VidNum1.4K</h2>
+        </div>
+
+        <div class="columns is-variable is-7 is-vcentered">
+          <div class="column is-7-desktop">
+            <figure class="transparent-figure">
+              <img src="static/images/paper_figures/Figure1_new.png" alt="VidNum-1.4K statistics" loading="lazy">
+              <figcaption><strong>Figure 2.</strong> Distribution of video topics, durations, and question composition in VidNum-1.4K.</figcaption>
+            </figure>
+          </div>
+          <div class="column is-5-desktop">
+            <div class="analysis-card">
+              <p class="card-label">Our Dataset</p>
+              <div class="component-list">
+                <article class="component-item">
+                  <span class="component-index">01</span>
+                  <div>
+                    <h3>1,379 MCQs</h3>
+                    <p>Each question is grounded in an independent video clip (5s to 120s), with strict human annotation and verification.</p>
+                  </div>
+                </article>
+                <article class="component-item">
+                  <span class="component-index">02</span>
+                  <div>
+                    <h3>Three Counting Targets</h3>
+                    <p>The benchmark covers Object (647), Action (343), and Event (389) to test broad numerical video reasoning.</p>
+                  </div>
+                </article>
+                <article class="component-item">
+                  <span class="component-index">03</span>
+                  <div>
+                    <h3>Diverse Sources</h3>
+                    <p>Videos span real-world, documentary/educational, and virtual-world content with high heterogeneity.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="level-grid level-grid-about">
+          <article class="level-card level-card-l1">
+            <p class="level-tag">Level 1</p>
+            <h3>Homogeneous Counting</h3>
+            <p>Count a single type of object/action/event under minimal constraints. This tests stable temporal tracking and object permanence.</p>
+          </article>
+          <article class="level-card level-card-l2">
+            <p class="level-tag">Level 2</p>
+            <h3>Constrained and Heterogeneous Counting</h3>
+            <p>Count multiple entity types or constrained attributes, often across multi-shot videos requiring robust re-identification.</p>
+          </article>
+          <article class="level-card level-card-l3">
+            <p class="level-tag">Level 3</p>
+            <h3>compositional numerical reasoning</h3>
+            <p>Perform temporally grounded arithmetic/comparison operations, moving from perception to multi-step logical deduction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="demo-questions">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="section-label">Demo Questions</p>
+          <h2 class="title is-3">Three-Level Benchmark Questions</h2>
+        </div>
+
+        <div class="demo-showcase-shell">
+        <div class="demo-question-grid">
+          <article class="demo-question-card demo-level-1">
+            <p class="demo-meta">Level 1 Demo | QID = 1306</p>
+            <div class="demo-video-pane">
+              <video controls preload="metadata" muted>
+                <source src="static/videos/demos/QID1306_demo.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-text-pane">
+              <h3>How many gray-green doors appeared in total in this video?</h3>
+              <p class="demo-options"><strong>Options:</strong> (A) 1 &nbsp; (B) 4 &nbsp; (C) 2 &nbsp; (D) 3</p>
+              <p class="demo-answer"><strong>Answer:</strong> D</p>
+            </div>
+            <div class="demo-reason-pane">
+              <p><strong>Reasoning Sketch</strong></p>
+              <img class="demo-reason-image" src="static/images/demo1.png" alt="QID 1306 reasoning image">
+            </div>
+          </article>
+
+          <article class="demo-question-card demo-level-2">
+            <p class="demo-meta">Level 2 Demo | QID = 166</p>
+            <div class="demo-video-pane">
+              <video controls preload="metadata" muted>
+                <source src="static/videos/demos/QID166_demo.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-text-pane">
+              <h3>How many different dogs appeared in the video?</h3>
+              <p class="demo-options"><strong>Options:</strong> (A) 9 &nbsp; (B) 8 &nbsp; (C) 7 &nbsp; (D) 10</p>
+              <p class="demo-answer"><strong>Answer:</strong> C</p>
+            </div>
+            <div class="demo-reason-pane">
+              <p><strong>Reasoning Sketch</strong></p>
+              <img class="demo-reason-image" src="static/images/demo2.png" alt="QID 166 reasoning image">
+            </div>
+          </article>
+
+          <article class="demo-question-card demo-level-3">
+            <p class="demo-meta">Level 3 Demo | QID = 505</p>
+            <div class="demo-video-pane">
+              <video controls preload="metadata" muted>
+                <source src="static/videos/demos/QID505_demo.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="demo-text-pane">
+              <h3>A short-haired man in a red jersey shoots twice near the goal. Were there more players in white jerseys near him during the first shot, or more players in yellow jerseys during the second shot?</h3>
+              <p class="demo-options"><strong>Options:</strong> (A) The first time. &nbsp; (B) Hard to tell &nbsp; (C) The second time &nbsp; (D) Same.</p>
+              <p class="demo-answer"><strong>Answer:</strong> A</p>
+            </div>
+            <div class="demo-reason-pane">
+              <p><strong>Reasoning Sketch</strong></p>
+              <img class="demo-reason-image" src="static/images/demo3.png" alt="QID 505 reasoning image">
+            </div>
+          </article>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="manual-pipeline">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="section-label">Data Construction</p>
+          <h2 class="title is-3">Manual Human Annotation Pipeline</h2>
+        </div>
+
+        <figure class="transparent-figure top-half-figure">
+          <img src="static/images/paper_figures/Figure2.png" alt="Top half of manual annotation pipeline" loading="lazy">
+          <figcaption><strong>Top Half Only.</strong> We show only the construction part of the pipeline here (evaluation protocol omitted on this page).</figcaption>
+        </figure>
+
+        <div class="construction-text-grid">
+          <article class="construction-card">
+            <h3>Source Video Collection</h3>
+            <p>Videos are curated under a two-tier topic hierarchy with five macro-categories: Knowledge, Life Record, Sports Competition, Artistic Performance, and Film &amp; Television.</p>
+          </article>
+          <article class="construction-card">
+            <h3>Creation and Primary Verification</h3>
+            <p>Group A creates timestamp-grounded numerical questions with a strict visual-description-only policy. Group B independently solves and filters ambiguous or prior-based questions.</p>
+          </article>
+          <article class="construction-card">
+            <h3>Quality Review and Final Audit</h3>
+            <p>Group C refines timestamps and validates reasoning relevance; Group D performs independent final audit. This process finalizes 1,379 verified pairs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="section-label">Discussion</p>
+          <h2 class="title is-3">Open the Discussion Subpages</h2>
+        </div>
+
+        <div class="discussion-link-grid">
+          <a class="discussion-link-card" href="discussion-cot-tradeoff.html">
+            <img src="static/images/paper_figures/Figure4.png" alt="CoT tradeoff analysis">
+            <div>
+              <p class="discussion-tag">Subpage 1</p>
+              <h3>Zero-shot CoT: A Double Edged Sword</h3>
+              <p>Detailed view of when CoT helps and when it hurts across levels and targets.</p>
+            </div>
+          </a>
+          <a class="discussion-link-card" href="discussion-scaling.html">
+            <img src="static/images/paper_figures/Figure5.png" alt="Scaling behavior analysis">
+            <div>
+              <p class="discussion-tag">Subpage 2</p>
+              <h3>Scaling Up + Failure Demo</h3>
+              <p>Joint analysis of scaling behavior and representative failure patterns.</p>
+            </div>
+          </a>
+          <a class="discussion-link-card" href="discussion-prompt-protocol.html">
+            <img src="static/images/paper_figures/Figure0.png" alt="Evaluation prompt protocol">
+            <div>
+              <p class="discussion-tag">Subpage 3</p>
+              <h3>Evaluation Prompt Protocol</h3>
+              <p>Full NoCoT and ZeroShot-CoT prompts used in benchmark evaluation.</p>
+            </div>
+          </a>
+          <a class="discussion-link-card" href="use-dataset.html">
+            <img src="static/images/paper_figures/Figure2.png" alt="Use dataset guide">
+            <div>
+              <p class="discussion-tag">Subpage 4</p>
+              <h3>Use Our Dataset</h3>
+              <p>How to download questions, run evaluation, and access full videos beyond GitHub limits.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <div class="download-shell">
+          <div>
+            <p class="section-label">Resources</p>
+            <h2 class="title is-3">Download Benchmark JSONL</h2>
+            <p class="download-note">Use the official benchmark JSONL file for reproducible VidNum-1.4K evaluation. Code is available on GitHub.</p>
+          </div>
+          <div class="buttons">
+            <a href="static/downloads/VidNum1_4K.jsonl" class="button cta-button cta-primary" download>
+              <span class="icon"><i class="fas fa-file-lines"></i></span>
+              <span>Download Benchmark JSONL</span>
+            </a>
+            <a href="use-dataset.html" class="button cta-button cta-secondary">
+              <span class="icon"><i class="fas fa-circle-info"></i></span>
+              <span>Use Our Dataset</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container is-max-widescreen">
+      <div class="footer-layout">
+        <div>
+          <p class="footer-mark">VidNum-1.4K</p>
+          <p class="footer-note">Project page for the VidNum-1.4K benchmark.</p>
+        </div>
+        <div class="footer-meta">
+          <p>Paper: <a href="sample-sigconf-authordraft (1).pdf" target="_blank" rel="noopener noreferrer">VidNum-1.4K: A Comprehensive Benchmark for Video-based Numerical Reasoning</a></p>
+          <p>GitHub: <a href="https://github.com/VidNumTeam/VidNum.git" target="_blank" rel="noopener noreferrer">spidermonk7/Numbers_VQA</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="static/js/index.js"></script>
+</body>
+</html>
+
+

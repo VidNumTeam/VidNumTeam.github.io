@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VidNum-1.4K leaderboard page.">
+  <title>VidNum-1.4K | Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header class="top-nav-wrap">
+    <nav class="top-nav container is-max-widescreen" aria-label="Main navigation">
+      <a class="top-nav-brand" href="index.html">VidNum-1.4K</a>
+      <div class="top-nav-links">
+        <a href="index.html#about-vidnum">About</a>
+        <a href="index.html#demo-questions">See Demo Questions</a>
+        <a href="index.html#manual-pipeline">Pipeline</a>
+        <a href="use-dataset.html">Use Our Dataset</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="https://github.com/VidNumTeam/VidNum.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="nav-offset">
+    <section class="section" id="leaderboard">
+      <div class="container is-max-widescreen">
+        <div class="section-heading-row">
+          <div class="section-heading">
+            <p class="section-label">Leaderboard</p>
+            <h1 class="title is-3">Benchmark Rankings (Updated Results)</h1>
+          </div>
+          <button type="button" class="button cta-button cta-primary leaderboard-submit-btn" id="openSubmissionModalBtn">
+            <span class="icon"><i class="fas fa-upload"></i></span>
+            <span>Submit</span>
+          </button>
+        </div>
+
+        <div class="podium-grid">
+          <article class="podium-card podium-gold">
+            <p class="podium-title">Overall Champion</p>
+            <h3>gemini-3.1-pro-preview</h3>
+            <p class="podium-score">Best Overall: <strong>60.30%</strong> (CoT)</p>
+          </article>
+          <article class="podium-card">
+            <p class="podium-title">Best Open-source</p>
+            <h3>InternVL3-78B</h3>
+            <p class="podium-score">Best Overall: <strong>46.41%</strong> (CoT)</p>
+          </article>
+          <article class="podium-card">
+            <p class="podium-title">Best NoCoT</p>
+            <h3>gemini-3.1-pro-preview</h3>
+            <p class="podium-score">NoCoT Overall: <strong>57.98%</strong></p>
+          </article>
+        </div>
+
+        <div class="table-shell">
+          <table class="table is-fullwidth leaderboard-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Model</th>
+                <th>NoCoT Overall (%)</th>
+                <th>CoT Overall (%)</th>
+                <th>Best Mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>#1</td><td>gemini-3.1-pro-preview</td><td>57.98</td><td><strong>60.30</strong></td><td>CoT</td></tr>
+              <tr><td>#2</td><td>gemini-3-flash-preview</td><td><strong>56.60</strong></td><td>55.74</td><td>NoCoT</td></tr>
+              <tr><td>#3</td><td>InternVL3-78B</td><td>42.28</td><td><strong>46.41</strong></td><td>CoT</td></tr>
+              <tr><td>#4</td><td>InternVL3-38B</td><td>42.57</td><td><strong>45.69</strong></td><td>CoT</td></tr>
+              <tr><td>#5</td><td>InternVL3-14B</td><td>39.96</td><td><strong>44.58</strong></td><td>CoT</td></tr>
+              <tr><td>#6</td><td>InternVL3-8B</td><td>37.35</td><td><strong>41.91</strong></td><td>CoT</td></tr>
+              <tr><td>#7</td><td>InternVL3_5-8B</td><td>35.39</td><td><strong>40.35</strong></td><td>CoT</td></tr>
+              <tr><td>#8</td><td>InternVL2_5-8B</td><td>37.64</td><td><strong>40.07</strong></td><td>CoT</td></tr>
+              <tr><td>#9</td><td>Qwen2.5-VL-7B</td><td><strong>34.45</strong></td><td>34.31</td><td>NoCoT</td></tr>
+              <tr><td>#10</td><td>Qwen3-VL-8B</td><td>31.69</td><td><strong>32.08</strong></td><td>CoT</td></tr>
+              <tr><td>#11</td><td>LLaVA-NeXT-7B</td><td>24.03</td><td><strong>24.05</strong></td><td>CoT</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">Updated on April 2, 2026 using the latest submitted aggregate results (`n`, `correct`, `acc`) for both NoCoT and CoT modes.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="submission-modal" id="submissionModal" aria-hidden="true">
+    <div class="submission-modal-backdrop" id="closeSubmissionModalBackdrop"></div>
+    <div class="submission-modal-content" role="dialog" aria-modal="true" aria-label="Upload model results">
+      <button type="button" class="submission-modal-close" id="closeSubmissionModalBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="submission-disabled-overlay" aria-live="polite">
+        <div class="submission-disabled-notice">
+          <p class="submission-disabled-title">Submission is temporarily unavailable</p>
+          <p class="submission-disabled-text">Leaderboard submission is not supported yet. We are improving this feature now.</p>
+          <p class="submission-disabled-text">当前暂不支持上传结果，我们正在完善中。</p>
+        </div>
+      </div>
+      <div class="submission-shell" id="submit-results">
+        <div class="submission-head">
+          <p class="section-label">Upload Your Model Results</p>
+          <h3>Submit to the VidNum-1.4K Ladder</h3>
+          <p>Fill in your scores and upload your result file. This page will generate a standardized submission package for benchmark maintainers.</p>
+        </div>
+        <form id="submissionForm" class="submission-form">
+          <div class="field-grid">
+            <label><span>Model Name</span><input id="modelName" type="text" required placeholder="e.g., MyVLM-32B"></label>
+            <label><span>Team / Affiliation</span><input id="affiliation" type="text" placeholder="e.g., ABC Lab"></label>
+            <label><span>Protocol</span><select id="protocol"><option value="CoT">CoT</option><option value="NoCoT">NoCoT</option><option value="Both">Both</option></select></label>
+            <label><span>Result File</span><input id="resultFile" type="file" accept=".csv,.xlsx,.json,.txt"></label>
+          </div>
+          <div class="score-grid">
+            <label><span>L1 Avg</span><input id="l1Score" type="number" min="0" max="100" step="0.01" required></label>
+            <label><span>L2 Avg</span><input id="l2Score" type="number" min="0" max="100" step="0.01" required></label>
+            <label><span>L3 Avg</span><input id="l3Score" type="number" min="0" max="100" step="0.01" required></label>
+            <label><span>Overall</span><input id="overallScore" type="number" min="0" max="100" step="0.01" required></label>
+          </div>
+          <div class="submission-actions">
+            <button type="button" class="button cta-button cta-primary" id="generateSubmissionBtn">Generate Submission JSON</button>
+            <button type="button" class="button cta-button cta-secondary" id="copySubmissionBtn">Copy Submission Text</button>
+          </div>
+          <p id="submissionStatus" class="submission-status"></p>
+          <pre id="submissionPreview" class="submission-preview"></pre>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="static/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discussion | Scaling + Failure Demo | VidNum-1.4K</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <main class="section">
+    <div class="container is-max-widescreen subpage-shell">
+      <p class="section-label">Discussion Subpage</p>
+      <h1 class="subpage-title">Scaling Up and Failure Demo</h1>
+      <figure class="transparent-figure">
+        <img src="static/images/paper_figures/Figure5.png" alt="Scaling trend analysis" loading="lazy">
+        <figcaption><strong>Figure 5.</strong> Scaling trends under NoCoT and CoT settings across Level 1/2/3 in VidNum-1.4K.</figcaption>
+      </figure>
+      <p class="hero-summary">InternVL3 generally improves from 8B to 78B, but gains are uneven by level. The largest gains appear in Level 3 compositional reasoning, especially under Zero-shot CoT, while Level 2 remains comparatively stagnant.</p>
+      <figure class="transparent-figure" style="margin-top: 1.2rem;">
+        <img src="static/images/paper_figures/Figure6.png" alt="Failure demo analysis" loading="lazy">
+        <figcaption><strong>Failure Demo.</strong> Visual-saliency trap: smaller models can confuse visual volume with true cardinality in compositional counting scenarios.</figcaption>
+      </figure>
+      <p class="hero-summary">This suggests scaling helps high-level arithmetic reasoning more than foundational visual grounding (instance tracking and cross-shot re-identification), which remains a core bottleneck.</p>
+      <a class="button cta-button cta-secondary subpage-back" href="index.html#leaderboard">Back to Main Page</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discussion | Zero-shot CoT: A Double Edged Sword | VidNum-1.4K</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <main class="section">
+    <div class="container is-max-widescreen subpage-shell">
+      <p class="section-label">Discussion Subpage</p>
+      <h1 class="subpage-title">Zero-shot CoT: A Double Edged Sword</h1>
+      <figure class="transparent-figure">
+        <img src="static/images/paper_figures/Figure4.png" alt="CoT gain/loss analysis" loading="lazy">
+        <figcaption><strong>Figure 4.</strong> Mean gain/loss under CoT across levels and counting targets. CoT helps Level 3 and Event tasks, while often hurting lower-level perception.</figcaption>
+      </figure>
+      <p class="hero-summary">At the aggregate level, Zero-shot CoT improves final accuracy by helping models resolve harder compositional dependencies. However, every tested model also shows a non-trivial set of regressions where previously correct NoCoT predictions become incorrect.</p>
+      <p class="hero-summary">This double-edged pattern indicates that current VLMs still rely on fragile shortcut matching for part of their performance. CoT is most beneficial in high-level/event-centric reasoning, but can inject extra noise into lower-level perceptual counting.</p>
+      <a class="button cta-button cta-secondary subpage-back" href="index.html#leaderboard">Back to Main Page</a>
+    </div>
+  </main>
+</body>
+</html>

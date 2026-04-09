@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discussion | Evaluation Prompt Protocol | VidNum-1.4K</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <main class="section">
+    <div class="container is-max-widescreen subpage-shell">
+      <p class="section-label">Discussion Subpage</p>
+      <h1 class="subpage-title">Evaluation Prompt Protocol</h1>
+      <p class="hero-summary">This page provides the exact prompts used in our benchmark evaluation: Direct Answer (NoCoT) and Zero-shot Chain-of-Thought (ZeroShot-CoT).</p>
+      <p class="hero-summary">Across all settings, we enforce final option output within <code>&lt;answer&gt;</code> tags for stable parsing. Under CoT, models are additionally asked to write intermediate observations/calculations in <code>&lt;think&gt;</code> tags before answering.</p>
+
+      <div class="submission-shell" style="padding:1.2rem;">
+        <p class="section-label">NoCoT</p>
+        <pre class="submission-preview">Please watch the provided video carefully and answer the following question based on the visual information.
+
+**Question:** {{ Question }}
+
+**Options:**
+A. {{ Choices[0] }}
+B. {{ Choices[1] }}
+C. {{ Choices[2] }}
+D. {{ Choices[3] }}
+
+Please provide your output according to the following requirements:
+1. Directly provide the final chosen option within the &lt;answer&gt; tags.
+2. Do not output any reasoning or any extra sentences.
+
+Your output format MUST strictly follow this structure:
+&lt;answer&gt;Final option letter&lt;/answer&gt;</pre>
+      </div>
+
+      <div class="submission-shell" style="padding:1.2rem; margin-top:1rem;">
+        <p class="section-label">ZeroShot-CoT</p>
+        <pre class="submission-preview">Please watch the provided video carefully and answer the following question based on the visual information.
+
+**Question:** {{ Question }}
+
+**Options:**
+A. {{ Choices[0] }}
+B. {{ Choices[1] }}
+C. {{ Choices[2] }}
+D. {{ Choices[3] }}
+
+Please provide your output according to the following requirements:
+1. First, document your observations of video details, frequency of actions, or the specific calculation process within the &lt;think&gt; tags.
+2. Then, provide the final chosen option (strictly limited to "A", "B", "C", or "D") within the &lt;answer&gt; tags.
+
+Your output format MUST strictly follow this structure:
+&lt;think&gt;
+[Provide your reasoning, counting, or calculation process here...]
+&lt;/think&gt;
+&lt;answer&gt;Final option letter&lt;/answer&gt;</pre>
+      </div>
+
+      <a class="button cta-button cta-secondary subpage-back" href="index.html#leaderboard">Back to Main Page</a>
+    </div>
+  </main>
+</body>
+</html>

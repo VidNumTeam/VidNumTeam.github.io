@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to download and use the VidNum-1.4K benchmark dataset.">
+  <title>Use Our Dataset | VidNum-1.4K</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header class="top-nav-wrap">
+    <nav class="top-nav container is-max-widescreen" aria-label="Main navigation">
+      <a class="top-nav-brand" href="index.html">VidNum-1.4K</a>
+      <div class="top-nav-links">
+        <a href="index.html#about-vidnum">About</a>
+        <a href="index.html#demo-questions">See Demo Questions</a>
+        <a href="index.html#manual-pipeline">Pipeline</a>
+        <a href="use-dataset.html">Use Our Dataset</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="https://github.com/VidNumTeam/VidNum.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="section nav-offset">
+    <div class="container is-max-widescreen subpage-shell">
+      <p class="section-label">User Guide</p>
+      <h1 class="subpage-title">Use Our Dataset</h1>
+      <p class="hero-summary">
+        This page explains how to access and use the VidNum-1.4K benchmark, including benchmark questions,
+        evaluation settings, and full video access for reproducible experiments.
+      </p>
+
+      <div class="submission-shell" style="padding:1.2rem; margin-top:1rem;">
+        <p class="section-label">Step 1</p>
+        <h2 class="title is-4" style="margin-top:0.2rem;">Download Benchmark JSONL</h2>
+        <p class="hero-summary" style="margin-top:0.6rem;">
+          Download the official benchmark JSONL file with options and answers:
+          <code>VidNum1_4K.jsonl</code>.
+        </p>
+        <div class="buttons">
+          <a href="static/downloads/VidNum1_4K.jsonl" class="button cta-button cta-primary" download>
+            <span class="icon"><i class="fas fa-file-lines"></i></span>
+            <span>Download Benchmark JSONL</span>
+          </a>
+          <a href="discussion-prompt-protocol.html" class="button cta-button cta-secondary">
+            <span class="icon"><i class="fas fa-list-check"></i></span>
+            <span>Evaluation Prompt Protocol</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="submission-shell" style="padding:1.2rem; margin-top:1rem;">
+        <p class="section-label">Step 2</p>
+        <h2 class="title is-4" style="margin-top:0.2rem;">Access Full Videos</h2>
+        <p class="hero-summary" style="margin-top:0.6rem;">
+          Full benchmark videos are large (10+ GB), so we do not host them on GitHub.
+          Please use our Hugging Face dataset page for full clip access:
+          <a href="https://huggingface.co/datasets/JoeyCCC/VidNum-1.4K" target="_blank" rel="noopener noreferrer">https://huggingface.co/datasets/JoeyCCC/VidNum-1.4K</a>.
+        </p>
+        <p class="hero-summary" style="margin-top:0.5rem;">1. You can download the dataset from our Hugging Face page (the <code>datacuts</code> folder).</p>
+        <p class="hero-summary">2. Video naming rule in this folder: each question corresponds to <code>{oss_link}_{start_time}_{end_time}.mp4</code>.</p>
+        <div class="buttons">
+          <a href="https://huggingface.co/datasets/JoeyCCC/VidNum-1.4K" class="button cta-button cta-accent" target="_blank" rel="noopener noreferrer">
+            <span class="icon"><i class="fas fa-database"></i></span>
+            <span>Open Hugging Face Dataset</span>
+          </a>
+          <a href="mailto:sy-cui@thu.edu.cn?subject=VidNum-1.4K%20Video%20Access%20Request" class="button cta-button cta-secondary">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span>Contact for Help</span>
+          </a>
+          <a href="https://github.com/VidNumTeam/VidNum.git" class="button cta-button cta-secondary" target="_blank" rel="noopener noreferrer">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Open GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="submission-shell" style="padding:1.2rem; margin-top:1rem;">
+        <p class="section-label">Step 3</p>
+        <h2 class="title is-4" style="margin-top:0.2rem;">Run Evaluation and Report Results</h2>
+        <p class="hero-summary" style="margin-top:0.6rem;">
+          Use the official NoCoT and ZeroShot-CoT prompting protocols, then report
+          per-level and overall accuracy. For model ranking, submit your aggregate results on the leaderboard page.
+        </p>
+        <div class="buttons">
+          <a href="leaderboard.html" class="button cta-button cta-secondary">
+            <span class="icon"><i class="fas fa-trophy"></i></span>
+            <span>Go to Leaderboard</span>
+          </a>
+          <a href="index.html#demo-questions" class="button cta-button cta-secondary">
+            <span class="icon"><i class="fas fa-circle-play"></i></span>
+            <span>See Demo Questions</span>
+          </a>
+        </div>
+      </div>
+
+      <a class="button cta-button cta-secondary subpage-back" href="index.html">Back to Main Page</a>
+    </div>
+  </main>
+</body>
+</html>
+
+
